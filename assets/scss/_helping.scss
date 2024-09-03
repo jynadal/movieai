@@ -121,7 +121,7 @@
     @include flex;
     gap: 13px;
 
-    .array-prev, .array-next {
+    .array-prev,.array-next,.cta-prev, .cta-next {
         width: 50px;
         height: 50px;
         line-height: 50px;
@@ -130,7 +130,7 @@
         @include transition;
     }
 
-    .array-prev {
+    .array-prev, .cta-prev {
         background-color: $theme-color;
         color: $white;
         border: 1px solid $theme-color;
@@ -141,7 +141,7 @@
         }
     }
 
-    .array-next {
+    .array-next, .cta-next {
       background-color: transparent;
       color: $white;
       border: 1px solid $white;

@@ -96,6 +96,88 @@ CSS TABLE OF CONTENTS
         //>> Nice Select Start <<//
         $('select').niceSelect();
 
+        //>> Hero Slider Start <<//
+        const sliderswiper = new Swiper('.hero-slider', {
+            //Optional parameters
+            speed: 1500,
+            loop: true,
+            slidesPerView: 1,
+            autoplay: true,
+            effect: 'fade',
+            breakpoints: {
+                '1600': {
+                    slidesPerView: 1,
+                },
+                '1400': {
+                    slidesPerView: 1,
+                },
+                '1200': {
+                    slidesPerView: 1,
+                },
+                '992': {
+                    slidesPerView: 1,
+                },
+                '768': {
+                    slidesPerView: 1,
+                },
+                '576': {
+                    slidesPerView: 1,
+                },
+                '0': {
+                    slidesPerView: 1,
+                },
+
+                a11y: false,
+            },
+            pagination: {
+                el: ".dots",
+                clickable: true,
+            },
+
+            navigation: {
+                prevEl: ".array-next",
+                nextEl: ".array-prev",
+            },
+
+        });
+        
+        //>> Banner Thumnail Slider Start <<//
+        if($('.banner-thumnail-slider').length > 0) {
+            const bannerThumnailSlider = new Swiper(".banner-thumnail-slider", {
+            spaceBetween: 10,
+            speed: 1500,
+            loop: true,
+            autoplay: true,
+            // autoplay: {
+            //     delay: 1000,
+            //     disableOnInteraction: false,
+            // },
+            pagination: {
+                el: ".dot",
+                clickable: true,
+            },
+            breakpoints: {
+                991: {
+                    slidesPerView: 3,
+                },
+                767: {
+                    slidesPerView: 2,
+                },
+                575: {
+                    slidesPerView: 1,
+                },
+                0: {
+                    slidesPerView: 1,
+                },
+            },
+
+            navigation: {
+                prevEl: ".array-next",
+                nextEl: ".array-prev",
+            },
+                
+            });
+        }
 
         //>> Movie Slider Start <<//
         if($('.movie-slider').length > 0) {
@@ -288,8 +370,8 @@ CSS TABLE OF CONTENTS
             });
         }
 
-         //>> Recently Video Slider Start <<//
-         if($('.recently-videos-slider').length > 0) {
+        //>> Recently Video Slider Start <<//
+        if($('.recently-videos-slider').length > 0) {
             const recentlyVideosSlider = new Swiper(".recently-videos-slider", {
                 spaceBetween: 30,
                 speed: 2000,
@@ -317,6 +399,131 @@ CSS TABLE OF CONTENTS
                 },
             });
         }
+
+        //>> Trending Video Slider Start <<//
+        if($('.trending-slider').length > 0) {
+            const trendingSlider = new Swiper(".trending-slider", {
+                spaceBetween: 30,
+                speed: 2000,
+                loop: true,
+                navigation: {
+                    nextEl: ".array-prev",
+                    prevEl: ".array-next",
+                },
+                breakpoints: {
+                    1199: {
+                        slidesPerView: 4,
+                    },
+                    991: {
+                        slidesPerView: 3,
+                    },
+                    767: {
+                        slidesPerView: 2,
+                    },
+                    575: {
+                        slidesPerView: 2,
+                    },
+                    0: {
+                        slidesPerView: 1,
+                    },
+                },
+            });
+        }
+
+        //>> Cta Thumnail Slider Start <<//
+        if($('.cta-thumnail-slider').length > 0) {
+            const ctaThumnailSlider = new Swiper(".cta-thumnail-slider", {
+                spaceBetween: 30,
+                speed: 2000,
+                loop: true,
+                navigation: {
+                    nextEl: ".cta-prev",
+                    prevEl: ".cta-next",
+                },
+                breakpoints: {
+                    991: {
+                        slidesPerView: 2,
+                    },
+                    767: {
+                        slidesPerView: 2,
+                    },
+                    575: {
+                        slidesPerView: 2,
+                    },
+                    0: {
+                        slidesPerView: 1,
+                    },
+                },
+            });
+        }
+
+        //>> Upcoming Movie Slider Start <<//
+        if($('.upcoming-movie-slider').length > 0) {
+            const upcomingMovieSlider = new Swiper(".upcoming-movie-slider", {
+                spaceBetween: 30,
+                speed: 2000,
+                loop: true,
+                navigation: {
+                    nextEl: ".array-prev",
+                    prevEl: ".array-next",
+                },
+                breakpoints: {
+                    1499: {
+                        slidesPerView: 7,
+                    },
+                    1399: {
+                        slidesPerView: 6,
+                    },
+                    1199: {
+                        slidesPerView: 4,
+                    },
+                    991: {
+                        slidesPerView: 3,
+                    },
+                    767: {
+                        slidesPerView: 2,
+                    },
+                    575: {
+                        slidesPerView: 2,
+                    },
+                    0: {
+                        slidesPerView: 1,
+                    },
+                },
+            });
+        }
+
+        //>> Web Series Slider Start <<//
+        if($('.web-series-slider').length > 0) {
+            const webSeriesSlider = new Swiper(".web-series-slider", {
+                spaceBetween: 30,
+                speed: 2000,
+                loop: true,
+                navigation: {
+                    nextEl: ".cta-prev",
+                    prevEl: ".cta-next",
+                },
+                breakpoints: {
+                    1199: {
+                        slidesPerView: 4,
+                    },
+                    991: {
+                        slidesPerView: 3,
+                    },
+                    767: {
+                        slidesPerView: 2,
+                    },
+                    575: {
+                        slidesPerView: 2,
+                    },
+                    0: {
+                        slidesPerView: 1,
+                    },
+                },
+            });
+        }
+
+        
 
     }); // End Document Ready Function
 
