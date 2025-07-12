@@ -50,6 +50,16 @@
       box-shadow: 0 0 0 0 rgba(255, 0, 0, .5);
       -webkit-animation: rippleOne 3s infinite;
       animation: rippleOne 3s infinite;
+
+      @include breakpoint (max-md){
+        width: 160px;
+        height: 160px;
+      }
+
+      @include breakpoint (max-sm){
+        width: 130px;
+        height: 130px;
+      }
   }
 
   &::before {
@@ -102,38 +112,6 @@
         border-radius: 50%;
         background-color: transparent;
         border: 2px solid $white;
-        content: "";
-      }
-   }
-}
-
-.swiper-dot-3 {
-  .swiper-pagination-bullet {
-      width: 6px;
-      height: 6px;
-      transition: 0.6s;
-      background-color: $theme-color;
-      opacity: 1;
-      border-radius: 6px;
-      &:not(:last-child){
-        margin-right: 12px;
-      }
-  }
-  .swiper-pagination-bullet.swiper-pagination-bullet-active {
-      background-color: $theme-color;
-      transition: 0.6s;
-      position: relative;
-
-      &::before{
-        position: absolute;
-        width: 22px;
-        height: 22px;
-        line-height: 22px;
-        top: -8px;
-        left: -8px;
-        border-radius: 50%;
-        background-color: transparent;
-        border: 2px solid $theme-color;
         content: "";
       }
    }
@@ -353,11 +331,12 @@ br {
               width: 50px;
               height: 50px;
               line-height: 50px;           
-              background: $bg-color-2;
+              background: $white;
               font-weight: 600;
               transition: all 0.3s ease-in-out;
               margin: 0 2px;
-              color: $white;
+              border: 1px solid #EDEDED;
+              color: #3F4B58;
               border-radius: 50%;
 
               @media (max-width: 767px) {
@@ -385,8 +364,9 @@ br {
               }
 
               &:hover {
-                  background-color: $theme-color;
+                  background-color: $theme-color-2;
                   color: $white;
+                  border: 1px solid transparent;
               }
           }
       }
@@ -470,9 +450,4 @@ br {
 
 .mb-80 {
     margin-bottom: 85px;
-}
-
-.border-top-1 {
-  border-top: 1px solid rgba(255, 255, 255, .20);
-  margin-top: 80px;
 }

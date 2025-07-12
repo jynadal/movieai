@@ -1,24 +1,32 @@
 /*-----------------------------------------------------------------
 
-Template Name: Stremker - OTT Platform and Video Streaming HTML Template 
-Author:  ex-coders
-Author URI: https://themeforest.net/user/ex-coders/portfolio
+Template Name: Prinoz - Printing company &
+Service Html Template 
+Author:  gramentheme
+Author URI: https://themeforest.net/user/gramentheme/portfolio
 Version: 1.0.0
-Description: Stremker - OTT Platform and Video Streaming HTML Template <
+Description: Prinoz - Printing company &
+Service Html Template <
 
 -------------------------------------------------------------------
 CSS TABLE OF CONTENTS
 -------------------------------------------------------------------
 
 01. header
-02. magnificPopup
-03. counter up
-04. wow animation
-05. nice select
-06. search popup
-07. swiper slider
-08. mousecursor 
-09. preloader 
+02. animated text with swiper slider
+03. magnificPopup
+04. counter up
+05. wow animation
+06. nice select
+07. scrolldown
+08. hover active js
+09. swiper slider
+10. range sliger
+11. quantity
+12. quantity cart
+13. search popup
+14. mousecursor 
+15. preloader 
 
 
 ------------------------------------------------------------------*/
@@ -29,9 +37,9 @@ CSS TABLE OF CONTENTS
     $(document).ready( function() {
 
         //>> Mobile Menu Js Start <<//
-        $('#mobile-menu').meanmenu({
-            meanMenuContainer: '.mobile-menu',
-            meanScreenWidth: "1199",
+        $('#mobile-menua').meanmenu({
+            meanMenuContainer: '.mobile-menua',
+            meanScreenWidth: "1920",
             meanExpand: ['<i class="far fa-plus"></i>'],
         });
 
@@ -54,13 +62,13 @@ CSS TABLE OF CONTENTS
 
         //>> Sticky Header Js Start <<//
 
-        // $(window).scroll(function() {
-        //     if ($(this).scrollTop() > 250) {
-        //         $("#header-sticky").addClass("sticky");
-        //     } else {
-        //         $("#header-sticky").removeClass("sticky");
-        //     }
-        // });
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 250) {
+                $("#header-sticky").addClass("sticky");
+            } else {
+                $("#header-sticky").removeClass("sticky");
+            }
+        });
 
         //>> Video Popup Start <<//
         $(".img-popup").magnificPopup({
@@ -86,38 +94,7 @@ CSS TABLE OF CONTENTS
         new WOW().init();
 
         //>> Nice Select Start <<//
-        // $('select').niceSelect();
-        $(document).ready(function () {
-            // Initialize Nice Select Plugin
-            $('select').niceSelect();  
-        
-            // Add hover functionality to open the dropdown
-            $('.nice-select').hover(
-                function () {
-                    $(this).addClass('open');  // Show options when hovering
-                }, 
-                function () {
-                    $(this).removeClass('open');  // Hide options when not hovering
-                }
-            );
-        
-            // Optional: Prevent dropdown from opening/closing on click
-            $('.nice-select').on('click', function (e) {
-                e.preventDefault();  // Stop click event from toggling the dropdown
-            });
-        });
-        
-
-        // Search bar
-        $(".tp-search-toggle").on('click', function(){
-            $(".tp-header-search-bar").addClass("tp-search-open");
-            $(".tp-offcanvas-overlay").addClass("tp-offcanvas-overlay-open");
-        });
-  
-        $(".tp-search-close,.tp-offcanvas-overlay").on('click', function(){
-            $(".tp-header-search-bar").removeClass("tp-search-open");
-            $(".tp-offcanvas-overlay").removeClass("tp-offcanvas-overlay-open");
-        });
+        $('select').niceSelect();
 
         //>> Hero Slider Start <<//
         const sliderswiper = new Swiper('.hero-slider', {
@@ -208,16 +185,12 @@ CSS TABLE OF CONTENTS
                 spaceBetween: 30,
                 speed: 2000,
                 loop: true,
-                pagination: {
-                    el: ".dot2",
-                    clickable: true,
-                },
                 navigation: {
                     nextEl: ".array-prev",
                     prevEl: ".array-next",
                 },
                 breakpoints: {
-                    1499: {
+                    1399: {
                         slidesPerView: 5,
                     },
                     1199: {
@@ -230,7 +203,7 @@ CSS TABLE OF CONTENTS
                         slidesPerView: 2,
                     },
                     575: {
-                        slidesPerView: 1,
+                        slidesPerView: 2,
                     },
                     0: {
                         slidesPerView: 1,
@@ -258,16 +231,16 @@ CSS TABLE OF CONTENTS
                         slidesPerView: 4,
                     },
                     1199: {
-                        slidesPerView: 3,
+                        slidesPerView: 4,
                     },
                     991: {
-                        slidesPerView: 2,
+                        slidesPerView: 3,
                     },
                     767: {
                         slidesPerView: 2,
                     },
                     575: {
-                        slidesPerView: 1,
+                        slidesPerView: 2,
                     },
                     0: {
                         slidesPerView: 1,
@@ -286,7 +259,7 @@ CSS TABLE OF CONTENTS
                     prevEl: ".array-next",
                 },
                 breakpoints: {
-                    1699: {
+                    1399: {
                         slidesPerView: 6,
                     },
                     1199: {
@@ -331,7 +304,7 @@ CSS TABLE OF CONTENTS
                         slidesPerView: 2,
                     },
                     575: {
-                        slidesPerView: 1,
+                        slidesPerView: 2,
                     },
                     0: {
                         slidesPerView: 1,
@@ -358,7 +331,7 @@ CSS TABLE OF CONTENTS
                         slidesPerView: 2,
                     },
                     575: {
-                        slidesPerView: 1,
+                        slidesPerView: 2,
                     },
                     0: {
                         slidesPerView: 1,
@@ -388,7 +361,7 @@ CSS TABLE OF CONTENTS
                         slidesPerView: 2,
                     },
                     575: {
-                        slidesPerView: 1,
+                        slidesPerView: 2,
                     },
                     0: {
                         slidesPerView: 1,
@@ -418,7 +391,7 @@ CSS TABLE OF CONTENTS
                         slidesPerView: 2,
                     },
                     575: {
-                        slidesPerView: 1,
+                        slidesPerView: 2,
                     },
                     0: {
                         slidesPerView: 1,
@@ -430,35 +403,6 @@ CSS TABLE OF CONTENTS
         //>> Trending Video Slider Start <<//
         if($('.trending-slider').length > 0) {
             const trendingSlider = new Swiper(".trending-slider", {
-                spaceBetween: 30,
-                speed: 2000,
-                loop: true,
-                navigation: {
-                    nextEl: ".cta-prev",
-                    prevEl: ".cta-next",
-                },
-                breakpoints: {
-                    1199: {
-                        slidesPerView: 4,
-                    },
-                    991: {
-                        slidesPerView: 3,
-                    },
-                    767: {
-                        slidesPerView: 2,
-                    },
-                    575: {
-                        slidesPerView: 1,
-                    },
-                    0: {
-                        slidesPerView: 1,
-                    },
-                },
-            });
-        }
-
-        if($('.trending-slider-2').length > 0) {
-            const trendingSlider2 = new Swiper(".trending-slider-2", {
                 spaceBetween: 30,
                 speed: 2000,
                 loop: true,
@@ -477,42 +421,7 @@ CSS TABLE OF CONTENTS
                         slidesPerView: 2,
                     },
                     575: {
-                        slidesPerView: 1,
-                    },
-                    0: {
-                        slidesPerView: 1,
-                    },
-                },
-            });
-        }
-
-        if($('.trending-movie-slider').length > 0) {
-            const trendingMovieSlider = new Swiper(".trending-movie-slider", {
-                spaceBetween: 30,
-                speed: 2000,
-                loop: true,
-                navigation: {
-                    nextEl: ".cta-prev",
-                    prevEl: ".cta-next",
-                },
-                pagination: {
-                    el: ".movie-dot",
-                },
-                breakpoints: {
-                    1399: {
-                        slidesPerView: 3,
-                    },
-                    1199: {
                         slidesPerView: 2,
-                    },
-                    991: {
-                        slidesPerView: 3,
-                    },
-                    767: {
-                        slidesPerView: 2,
-                    },
-                    575: {
-                        slidesPerView: 1,
                     },
                     0: {
                         slidesPerView: 1,
@@ -559,11 +468,11 @@ CSS TABLE OF CONTENTS
                     prevEl: ".array-next",
                 },
                 breakpoints: {
-                    1699: {
-                        slidesPerView: 6,
-                    },
                     1499: {
-                        slidesPerView: 5,
+                        slidesPerView: 7,
+                    },
+                    1399: {
+                        slidesPerView: 6,
                     },
                     1199: {
                         slidesPerView: 4,
@@ -572,7 +481,7 @@ CSS TABLE OF CONTENTS
                         slidesPerView: 3,
                     },
                     767: {
-                        slidesPerView: 3,
+                        slidesPerView: 2,
                     },
                     575: {
                         slidesPerView: 2,
@@ -595,7 +504,7 @@ CSS TABLE OF CONTENTS
                     prevEl: ".cta-next",
                 },
                 breakpoints: {
-                    1399: {
+                    1199: {
                         slidesPerView: 4,
                     },
                     991: {
@@ -603,35 +512,6 @@ CSS TABLE OF CONTENTS
                     },
                     767: {
                         slidesPerView: 2,
-                    },
-                    575: {
-                        slidesPerView: 1,
-                    },
-                    0: {
-                        slidesPerView: 1,
-                    },
-                },
-            });
-        }
-
-        //>> Cta Image Slider Start <<//
-        if($('.cta-movie-slider').length > 0) {
-            const ctaMovieSlider = new Swiper(".cta-movie-slider", {
-                spaceBetween: 30,
-                speed: 2000,
-                direction: "vertical",
-                loop: true,
-                autoplay: {
-                    delay: 1000,
-                    disableOnInteraction: false,
-                },
-                pagination: {
-                    el: ".dot",
-                    clickable: true,
-                },
-                breakpoints: {
-                    767: {
-                        slidesPerView: 3,
                     },
                     575: {
                         slidesPerView: 2,
@@ -643,259 +523,7 @@ CSS TABLE OF CONTENTS
             });
         }
 
-        //>> Cast Slider Start <<//
-        if($('.cast-slider').length > 0) {
-            const castSlider = new Swiper(".cast-slider", {
-                spaceBetween: 30,
-                speed: 2000,
-                loop: true,
-                autoplay: {
-                    delay: 1000,
-                    disableOnInteraction: false,
-                },
-                navigation: {
-                    nextEl: ".cta-prev",
-                    prevEl: ".cta-next",
-                },
-                breakpoints: {
-                    1399: {
-                        slidesPerView: 8,
-                    },
-                    1199: {
-                        slidesPerView: 6,
-                    },
-                    991: {
-                        slidesPerView: 6,
-                    },
-                    767: {
-                        slidesPerView: 4,
-                    },
-                    575: {
-                        slidesPerView: 3,
-                    },
-                    0: {
-                        slidesPerView: 1,
-                    },
-                },
-            });
-        }
-
-        if($('.cast-slider-2').length > 0) {
-            const castSlider2 = new Swiper(".cast-slider-2", {
-                spaceBetween: 30,
-                speed: 2000,
-                loop: true,
-                breakpoints: {
-                    1399: {
-                        slidesPerView: 10,
-                    },
-                    1199: {
-                        slidesPerView: 8,
-                    },
-                    991: {
-                        slidesPerView: 5,
-                    },
-                    767: {
-                        slidesPerView: 4,
-                    },
-                    575: {
-                        slidesPerView: 3,
-                    },
-                    0: {
-                        slidesPerView: 1,
-                    },
-                },
-            });
-        }
-
-        //>> Review Slider Start <<//
-        if($('.review-slider').length > 0) {
-            const reviewSlider = new Swiper(".review-slider", {
-                spaceBetween: 20,
-                speed: 2000,
-                loop: true,
-                autoplay: {
-                    delay: 1000,
-                    disableOnInteraction: false,
-                },
-                pagination: {
-                    el: ".dot",
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: ".array-prev",
-                    prevEl: ".array-next",
-                },
-                breakpoints: {
-                    1199: {
-                        slidesPerView: 2,
-                    },
-                    991: {
-                        slidesPerView: 1,
-                    },
-                    767: {
-                        slidesPerView: 1,
-                    },
-                    575: {
-                        slidesPerView: 1,
-                    },
-                    0: {
-                        slidesPerView: 1,
-                    },
-                },
-            });
-        }
-
-        //>> Brand Slider Start <<//
-        if($('.brand-slider').length > 0) {
-            const brandSlider = new Swiper(".brand-slider", {
-                spaceBetween: 30,
-                speed: 2000,
-                loop: true,
-                autoplay: {
-                    delay: 1000,
-                    disableOnInteraction: false,
-                },
-                breakpoints: {
-                    1199: {
-                        slidesPerView: 5,
-                    },
-                    991: {
-                        slidesPerView: 4,
-                    },
-                    767: {
-                        slidesPerView: 3,
-                    },
-                    575: {
-                        slidesPerView: 2,
-                    },
-                    0: {
-                        slidesPerView: 1,
-                    },
-                },
-            });
-        }
-
-        //>> Video Details Slider Start <<//
-        if($('.video-details-slider').length > 0) {
-            const videoDetailsSlider = new Swiper(".video-details-slider", {
-                spaceBetween: 5,
-                speed: 2000,
-                loop: true,
-                autoplay: {
-                    delay: 1000,
-                    disableOnInteraction: false,
-                },
-                pagination: {
-                    el: ".dot",
-                    clickable: true,
-                },
-                breakpoints: {
-                    1199: {
-                        slidesPerView: 4,
-                    },
-                    991: {
-                        slidesPerView: 3,
-                    },
-                    767: {
-                        slidesPerView: 1,
-                    },
-                    575: {
-                        slidesPerView: 1,
-                    },
-                    0: {
-                        slidesPerView: 1,
-                    },
-                },
-            });
-        }
-
-        //>> Testimonial Slider Start <<//
-        if($('.testimonial-slider').length > 0) {
-            const testimonialSlider = new Swiper(".testimonial-slider", {
-                spaceBetween: 30,
-                speed: 2000,
-                loop: true,
-                autoplay: {
-                    delay: 1000,
-                    disableOnInteraction: false,
-                },
-                pagination: {
-                    el: ".dot",
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: ".array-prev",
-                    prevEl: ".array-next",
-                },
-                breakpoints: {
-                    1399: {
-                        slidesPerView: 4,
-                    },
-                    1199: {
-                        slidesPerView: 3,
-                    },
-                    991: {
-                        slidesPerView: 2,
-                    },
-                    767: {
-                        slidesPerView: 2,
-                    },
-                    575: {
-                        slidesPerView: 1,
-                    },
-                    0: {
-                        slidesPerView: 1,
-                    },
-                },
-            });
-        }
-
-        //>> Mouse Cursor Start <<//
-        function mousecursor() {
-            if ($("body")) {
-                const e = document.querySelector(".cursor-inner"),
-                    t = document.querySelector(".cursor-outer");
-                let n,
-                    i = 0,
-                    o = !1;
-                (window.onmousemove = function(s) {
-                    o ||
-                        (t.style.transform =
-                            "translate(" + s.clientX + "px, " + s.clientY + "px)"),
-                        (e.style.transform =
-                            "translate(" + s.clientX + "px, " + s.clientY + "px)"),
-                        (n = s.clientY),
-                        (i = s.clientX);
-                }),
-                $("body").on("mouseenter", "a, .cursor-pointer", function() {
-                        e.classList.add("cursor-hover"), t.classList.add("cursor-hover");
-                    }),
-                    $("body").on("mouseleave", "a, .cursor-pointer", function() {
-                        ($(this).is("a") && $(this).closest(".cursor-pointer").length) ||
-                        (e.classList.remove("cursor-hover"),
-                            t.classList.remove("cursor-hover"));
-                    }),
-                    (e.style.visibility = "visible"),
-                    (t.style.visibility = "visible");
-            }
-        }
-        $(function() {
-            mousecursor();
-        });
-
-        // 13.Back to top btn    
-        $(window).scroll(function () {
-            if ($(this).scrollTop() > 20) {
-                $("#back-top").addClass("show");
-            } else {
-                $("#back-top").removeClass("show");
-            }
-        });
-        $("#back-top").click(function () {
-            $("html, body").animate({ scrollTop: 0 }, 800);
-            return false;
-        });
+        
 
     }); // End Document Ready Function
 
