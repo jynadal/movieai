@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asset Test - www.vid30.fr</title>
+    
+    <!-- Test CSS Loading -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-section {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .success {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+        }
+        .error {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            color: #721c24;
+        }
+        .test-image {
+            max-width: 200px;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .asset-url {
+            font-family: monospace;
+            background-color: #f8f9fa;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Asset Loading Test - www.vid30.fr</h1>
+        <p>This page tests if your assets are loading correctly after deployment.</p>
+        
+        <!-- CSS Test -->
+        <div class="test-section">
+            <h2>CSS Loading Test</h2>
+            <p>Testing CSS files:</p>
+            <ul>
+                <li><span class="asset-url">assets/css/bootstrap.min.css</span></li>
+                <li><span class="asset-url">assets/css/main.css</span></li>
+            </ul>
+            <div class="btn btn-primary">
+                If this button is styled with Bootstrap, CSS is loading correctly
+            </div>
+        </div>
+        
+        <!-- Image Test -->
+        <div class="test-section">
+            <h2>Image Loading Test</h2>
+            <p>Testing image files:</p>
+            <div>
+                <p><span class="asset-url">assets/img/hero/01.jpg</span></p>
+                <img src="assets/img/hero/01.jpg" alt="Test Image 1" class="test-image" 
+                     onload="this.nextElementSibling.innerHTML='✅ Image loaded successfully'" 
+                     onerror="this.nextElementSibling.innerHTML='❌ Image failed to load'">
+                <p>Loading status: <span>Testing...</span></p>
+            </div>
+            
+            <div>
+                <p><span class="asset-url">assets/img/lightning.png</span></p>
+                <img src="assets/img/lightning.png" alt="Test Image 2" class="test-image" 
+                     onload="this.nextElementSibling.innerHTML='✅ Image loaded successfully'" 
+                     onerror="this.nextElementSibling.innerHTML='❌ Image failed to load'">
+                <p>Loading status: <span>Testing...</span></p>
+            </div>
+        </div>
+        
+        <!-- JavaScript Test -->
+        <div class="test-section">
+            <h2>JavaScript Loading Test</h2>
+            <p>Testing JavaScript files:</p>
+            <ul>
+                <li><span class="asset-url">assets/js/jquery-3.7.1.min.js</span></li>
+                <li><span class="asset-url">assets/js/bootstrap.bundle.min.js</span></li>
+                <li><span class="asset-url">assets/js/main.js</span></li>
+            </ul>
+            <button onclick="testJavaScript()" class="btn btn-success">Test JavaScript</button>
+            <div id="js-test-result" style="margin-top: 10px;"></div>
+        </div>
+        
+        <!-- Manual URL Test -->
+        <div class="test-section">
+            <h2>Manual URL Test</h2>
+            <p>Click these links to test if assets are accessible directly:</p>
+            <ul>
+                <li><a href="assets/css/main.css" target="_blank">assets/css/main.css</a></li>
+                <li><a href="assets/js/main.js" target="_blank">assets/js/main.js</a></li>
+                <li><a href="assets/img/hero/01.jpg" target="_blank">assets/img/hero/01.jpg</a></li>
+            </ul>
+            <p><strong>Expected:</strong> Links should open the files, not show 404 errors</p>
+        </div>
+        
+        <!-- Troubleshooting -->
+        <div class="test-section">
+            <h2>Troubleshooting</h2>
+            <p>If any tests fail:</p>
+            <ol>
+                <li>Check if the <code>assets/</code> folder is uploaded to your server</li>
+                <li>Verify the folder structure matches your local project</li>
+                <li>Check file permissions (644 for files, 755 for directories)</li>
+                <li>Open browser Developer Tools (F12) and check Network tab for 404 errors</li>
+                <li>Contact your web hosting provider if files exist but still return 404</li>
+            </ol>
+        </div>
+    </div>
+    
+    <!-- Test JavaScript Loading -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    
+    <script>
+        function testJavaScript() {
+            const resultDiv = document.getElementById('js-test-result');
+            let results = [];
+            
+            // Test jQuery
+            if (typeof jQuery !== 'undefined') {
+                results.push('✅ jQuery loaded successfully');
+            } else {
+                results.push('❌ jQuery failed to load');
+            }
+            
+            // Test Bootstrap
+            if (typeof bootstrap !== 'undefined') {
+                results.push('✅ Bootstrap JS loaded successfully');
+            } else {
+                results.push('❌ Bootstrap JS failed to load');
+            }
+            
+            // Test basic JavaScript
+            results.push('✅ Basic JavaScript is working');
+            
+            resultDiv.innerHTML = '<ul><li>' + results.join('</li><li>') + '</li></ul>';
+        }
+        
+        // Auto-test on page load
+        window.addEventListener('load', function() {
+            // Test if main.css loaded by checking if a specific class exists
+            const testElement = document.createElement('div');
+            testElement.className = 'body-bg'; // This class is defined in main.css
+            document.body.appendChild(testElement);
+            
+            const styles = window.getComputedStyle(testElement);
+            if (styles.backgroundColor && styles.backgroundColor !== 'rgba(0, 0, 0, 0)') {
+                console.log('✅ main.css loaded successfully');
+            } else {
+                console.log('❌ main.css may not have loaded');
+            }
+            
+            document.body.removeChild(testElement);
+        });
+    </script>
+</body>
+</html>
