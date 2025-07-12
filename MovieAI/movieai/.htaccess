@@ -1,0 +1,38 @@
+# Configuration pour servir les fichiers statiques sur cPanel
+RewriteEngine On
+
+# Servir les fichiers statiques directement
+RewriteCond %{REQUEST_URI} ^/static/ [NC]
+RewriteRule ^(.*)$ - [L]
+
+# Servir les fichiers média directement
+RewriteCond %{REQUEST_URI} ^/media/ [NC]
+RewriteRule ^(.*)$ - [L]
+
+# Rediriger toutes les autres requêtes vers Django
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.py/$1 [QSA,L]
+
+# Configuration des types MIME pour les fichiers statiques
+<FilesMatch "\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$">
+    Header set Cache-Control "public, max-age=31536000"
+    ExpiresActive On
+    ExpiresDefault "access plus 1 year"
+</FilesMatch>
+
+# Configuration pour les fichiers CSS
+<FilesMatch "\.css$">
+    Header set Content-Type "text/css"
+</FilesMatch>
+
+# Configuration pour les fichiers JavaScript
+<FilesMatch "\.js$">
+    Header set Content-Type "application/javascript"
+</FilesMatch>
+
+# Désactiver l'affichage des erreurs en production
+<IfModule mod_php.c>
+    php_flag display_errors Off
+    php_flag log_errors On
+</IfModule>
