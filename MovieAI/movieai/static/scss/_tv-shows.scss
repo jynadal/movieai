@@ -80,7 +80,7 @@
 
         p {
             text-transform: capitalize;
-            color: #7d7d7d;
+            color: $white;
             padding: 10px 0;
         }
 
@@ -95,35 +95,6 @@
                 i {
                     margin-right: 7px;
                 }
-            }
-        }
-    }
-
-    &.style-2 {
-        .exclusive-image {
-            position: relative;
-
-            .video-btn {
-                width: 50px;
-                height: 50px;
-                text-align: center;
-                line-height: 50px;
-                border-radius: 50%;
-                background-color: $white;
-                color: $theme-color;
-                display: inline-block;
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                @include transition;
-                transform: translate(-50%,-50%);
-            }
-        }
-        .exclusive-content {
-            .post-2 {
-                @include flex;
-                gap: 15px;
-                margin-top: 10px;
             }
         }
     }
@@ -293,41 +264,15 @@
             }
 
             .movie-list-image {
-                position: relative;
-
                 img {
                     border-radius: 20px;
-                }
-
-                .video-btn {
-                    background-color: $theme-color;
-                    color: $white;
-                    display: inline-block;
-                    font-size: 16px;
-                    height: 36px;
-                    width: 36px;
-                    line-height: 36px;
-                    border-radius: 50%;
-                    text-align: center;
-                    position: absolute;
-                    border: 1px solid $theme-color;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%,-50%);
-
-                    &.ripple {
-                        &::before,&::after {
-                           width: 36px;
-                           height: 36px;
-                        }
-                    }
                 }
             }
 
             .movie-list-content {
                 h6 {
                     font-weight: 600;
-                    font-size: 22px;
+                    font-size: 18px;
 
                     a {
                         color: $white;
@@ -371,10 +316,6 @@
 
 .web-series-wrapper {
     margin-right: -30%;
-
-    @include breakpoint (max-md){
-        margin-right: 0;
-    }
     
     .web-series-box-items {
         margin-top: 30px;
@@ -394,16 +335,12 @@
             h3 {
                 a {
                     color: $white;
-
-                    &:hover {
-                        color: $theme-color;
-                    }
                 }
             }
 
             p {
-                font-weight: 500;
-                color: #7d7d7d;
+                font-weight: 600;
+                color: $white;
                 text-transform: capitalize;
             }
 
@@ -450,129 +387,6 @@
                     font-weight: 400;
                     text-transform: capitalize;
                 }
-            }
-        }
-    }
-}
-
-.tv-shows-details-section {
-    .container-fluid {
-        padding: 0 155px;
-
-        @include breakpoint (max-xxxl){
-            padding: 0 50px;
-        }
-
-        @include breakpoint (max-xxl){
-            padding: 0 40px;
-        }
-
-        @include breakpoint (max-xl){
-            padding: 0 30px;
-        }
-    }
-}
-
-.tv-shows-details-wrapper {
-    .details-image {
-        position: relative;
-        margin-bottom: 80px;
-
-        img {
-            @include imgw;
-            border-radius: 30px;
-        }
-
-        .video-btn {
-            width: 80px;
-            height: 80px;
-            text-align: center;
-            line-height: 80px;
-            border-radius: 50%;
-            background-color: $white;
-            color: $theme-color;
-            display: inline-block;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-        }
-    }
-
-    &.web-series-details-wrapper {
-        .details-image-2 {
-            position: relative;
-            margin-bottom: 80px;
-
-            img {
-                @include imgw;
-                border-radius: 30px;
-            }
-
-            .video-btn {
-                width: 80px;
-                height: 80px;
-                text-align: center;
-                line-height: 80px;
-                border-radius: 50%;
-                background-color: $white;
-                color: $theme-color;
-                display: inline-block;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%,-50%);
-    
-                @include breakpoint (max-sm){
-                    width: 60px;
-                    height: 60px;
-                    line-height: 60px;
-                }
-            }
-
-            .theme-btn {
-                padding: 21.5px 30px;
-                min-width: 170px;
-
-                i {
-                    margin-right: 10px;
-                }
-            }
-
-            .details-content {
-                max-width: 640px;
-                text-align: center;
-                margin: 0 auto;
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
-                bottom: 40px;
-
-                h3 {
-                    font-size: 30px;
-                    margin-bottom: 10px;
-                }
-
-                p {
-                    color: #999;
-                }
-
-                .theme-btn {
-                    margin-top: 30px;
-                }
-            }
-        }
-
-        .web-series-details-slider {
-            position: relative;
-
-            .array-button-2 {
-                position: absolute;
-                top: 45%;
-                left: 80px;
-                right: 80px;
-                transform: translateY(-50%);
-                z-index: 9;
             }
         }
     }

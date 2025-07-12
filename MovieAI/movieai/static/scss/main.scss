@@ -1,7 +1,7 @@
 /*
-Theme Name: Stremker
-Author: ex-coders
-Author URI: https://themeforest.net/user/ex-coders/portfolio
+Theme Name: Prinoz
+Author: gramentheme
+Author URI: https://themeforest.net/user/gramentheme/portfolio
 Description: Stremker - OTT Platform and Video Streaming HTML Template
 Service Html Template 
 Version: 1.0.0
@@ -28,12 +28,16 @@ Version: 1.0.0
 @import "_about";
 //>> Animation <<//
 @import "_animation";
+//>> Brand <<//
+@import "_brand";
 //>> Contact <<//
 @import "_contact";
 //>> Cta <<//
 @import "_cta";
 //>> Faq <<//
 @import "_faq";
+//>> Feature <<//
+@import "_feature";
 //>> Footer <<//
 @import "_footer";
 //>> Header <<//
@@ -50,6 +54,8 @@ Version: 1.0.0
 @import "_preloader";
 //>> Pricing <<//
 @import "_pricing";
+//>> Project <<//
+@import "_project";
 //>> Section <<//
 @import "_section";
 //>> Tv Shows <<//
@@ -58,6 +64,8 @@ Version: 1.0.0
 @import "_testimonial";
 //>> Movie <<//
 @import "_movie";
+//>> Shop <<//
+@import "_marquee";
 
 //>> Template Section Style End <<//
 
